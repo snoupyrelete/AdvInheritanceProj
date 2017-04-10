@@ -1,25 +1,25 @@
 package adv.model;
 
-public class Ridgeback extends Dog {
-		
-	public Ridgeback() {
-		super("Kona", 85);
-		flammability = 0;
+public class Arcanine extends Dog {
+
+	public Arcanine() {
+		super("Arcanine", 342);
+		flammability = 100;
 	}
 
 	@Override
 	public boolean isFlammable() {
-		return false;
-	}
-	
-	@Override
-	public boolean isFlameRetardant() {
 		return true;
 	}
 
 	@Override
-	public boolean isDrenchedInLighterFluid() {
+	public boolean isFlameRetardant() {
 		return false;
+	}
+
+	@Override
+	public boolean isDrenchedInLighterFluid() {
+		return true;
 	}
 
 	@Override
