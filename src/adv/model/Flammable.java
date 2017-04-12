@@ -2,7 +2,7 @@ package adv.model;
 /**
  * @author Dylan Robson
  * @author Kaden Martinsen
- * @author Jacob Nazborne
+ * @author Jacob Osborne
  * @author Braeden Moffat
  */
 public interface Flammable {

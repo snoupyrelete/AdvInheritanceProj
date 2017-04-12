@@ -1,5 +1,7 @@
 package adv.model;
 
+import javax.swing.JOptionPane;
+
 public class Arcanine extends Dog {
 
 	public Arcanine() {
@@ -25,6 +27,7 @@ public class Arcanine extends Dog {
 	@Override
 	public void setFlammabilityLevel(int level) {
 		this.flammability = level;
+		JOptionPane.showMessageDialog(null, "Flammability level set to " + level);
 	}
 
 	@Override

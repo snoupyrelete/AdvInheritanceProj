@@ -3,32 +3,51 @@ package adv.controller;
 import java.util.ArrayList;
 
 import adv.model.*;
-
+import adv.view.*;
 
 public class InheritanceController {
 
-	Dog cutestDogInTheWorld;
-	Dog fieryPokemonDoggo;
-	ArrayList<Dog> pupperList = new ArrayList<Dog>();
+	private Dog cutestDogInTheWorld;
+	private Dog fieryPokemonDoggo;
+	private Mustang kadensDumbCar;
+	
+	private ArrayList<Flammable> fireList = new ArrayList<Flammable>();
+	private InheritanceFrame inheritanceFrame;
 	
 	public InheritanceController() {
+		inheritanceFrame = new InheritanceFrame(this);
 		cutestDogInTheWorld = new Ridgeback();
 		fieryPokemonDoggo = new Arcanine();
+		kadensDumbCar = new Mustang();
 		
-		pupperList.add(cutestDogInTheWorld);
-		pupperList.add(fieryPokemonDoggo);
+		
+		fireList.add(cutestDogInTheWorld);
+		fireList.add(fieryPokemonDoggo);
+		fireList.add(kadensDumbCar);
 	}
 	
 	public void start() {
+
+	}
+	
+	public String useFlammableList() {
 		System.out.println("The cutest dog in the world is:");
 		System.out.println(cutestDogInTheWorld.toString());
 		
-		for(int i = 0; i < pupperList.size(); i++) {
-			if(pupperList.get(i) instanceof Ridgeback) {
-				pupperList.get(i).getFlammabilityLevel();
-			} else if (pupperList.get(i) instanceof Arcanine) {
-				pupperList.get(i).isDrenchedInLighterFluid();
-			}
+		String results = "";
+		for(Flammable currentFlammable: fireList) {
+			results += currentFlammable.toString();
+			results += currentFlammable.getFlammabilityLevel() + " ";
+			results += currentFlammable.isDrenchedInLighterFluid() + " ";
+			results += currentFlammable.isFlameRetardant() + " ";
+			results += currentFlammable.getFlammabilityLevel() + " ";
+			currentFlammable.setFlammabilityLevel(666);
+			
+				if(currentFlammable instanceof Dog) {
+					results += "Dog was made by Dylan";	
+				}
+			results += "\n";
 		}
+		return results;
 	}
 }
